@@ -1,6 +1,10 @@
-# GHCVM Examples
+# Java FFI w/ Generics Example
 
-This repository contains sub-folders that have examples to demonstrate GHCVM in action. You can view the `README.md` in each sub-folder for instructions on how to run the program.
+This example demonstrates how you can import generic types from Java libraries.
+
+To run the program, execute the following in this example's directory:
+
+```$ cabalvm run ```
 
 ## Contact Us
 
