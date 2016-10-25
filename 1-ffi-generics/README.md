@@ -10,6 +10,6 @@ To run the program, execute the following in this example's directory:
 
 If you had trouble with this tutorial, you can give us feedback by:
 
-- filing an [issue](https://github.com/rahulmutt/ghcvm-examples/issues/new)
+- filing an [issue](https://github.com/typelead/eta-examples/issues/new)
 
 - discussing with us on [Gitter](https://gitter.im/rahulmutt/ghcvm) 
