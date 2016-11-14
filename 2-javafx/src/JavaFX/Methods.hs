@@ -11,6 +11,7 @@ foreign import java unsafe "@new" newScene :: (Extends a Parent)
 foreign import java unsafe "@new"
   newCircle :: Double -> Double -> Double -> Java c Circle
 
+
 foreign import java unsafe "@new"
   newTextField' :: JString -> Java c TextField
 
@@ -35,4 +36,23 @@ setTitle :: String -> Java Stage ()
 setTitle = setTitle' . mkJString
 
 foreign import java unsafe "setScene" setScene :: Scene -> Java Stage ()
+
+-- Button-related stuff
+foreign import java unsafe "@wrapper @abstract handle"
+  action :: (Extends a Event)
+         => (a -> Java (EventHandler a) ())
+         -> EventHandler a
+
+foreign import java unsafe "@new"
+  newButton' :: JString -> Java c Button
+
+newButton = newButton' . mkJString
+
+foreign import java unsafe "setOnAction"
+  setOnAction' :: EventHandler ActionEvent -> Java Button ()
+
+setOnAction :: (ActionEvent -> Java (EventHandler ActionEvent) ()) -> Java Button ()
+setOnAction act = setOnAction' (action act)
+
+
 

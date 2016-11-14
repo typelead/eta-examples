@@ -28,11 +28,23 @@ data {-# CLASS "javafx.scene.shape.Shape" #-} Shape
 data {-# CLASS "javafx.scene.control.TextField" #-} TextField
   = TextField (Object# TextField)
 
+data {-# CLASS "javafx.scene.control.Button" #-} Button
+  = Button (Object# Button)
+
 data {-# CLASS "javafx.scene.control.StackPane" #-} StackPane
   = StackPane (Object# StackPane)
 
 data {-# CLASS "javafx.collections.ObservableList" #-} ObservableList
   = ObservableList (Object# ObservableList)
+
+data {-# CLASS "javafx.event.Event" #-} Event
+  = Event (Object# Event)
+
+data {-# CLASS "javafx.event.ActionEvent" #-} ActionEvent
+  = ActionEvent (Object# ActionEvent)
+
+data {-# CLASS "javafx.event.EventHandler" #-} EventHandler a
+  = EventHandler (Object# (EventHandler a))
 
 instance Class Application where
   obj = Application
@@ -74,8 +86,29 @@ instance Class ObservableList where
   obj = ObservableList
   unobj (ObservableList o) = o
 
+instance Class Button where
+  obj = Button
+  unobj (Button o) = o
+
+instance Class Event where
+  obj = Event
+  unobj (Event o) = o
+
+instance Class ActionEvent where
+  obj = ActionEvent
+  unobj (ActionEvent o) = o
+
+instance Class (EventHandler a) where
+  obj = EventHandler
+  unobj (EventHandler o) = o
+
 type instance Super Group = Parent
 type instance Super Parent = Node
 type instance Super Shape = Node
 type instance Super Circle = Shape
 type instance Super Node = Object
+type instance Super Event = Object
+type instance Super ActionEvent = Event
+type instance Super (EventHandler a) = Object
+type instance Super Button = Object
+

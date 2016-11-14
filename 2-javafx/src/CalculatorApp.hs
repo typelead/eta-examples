@@ -12,9 +12,13 @@ data {-# CLASS "org.eta.CalculatorApp extends javafx.application.Application" #-
 start :: Stage -> Java CalculatorApp ()
 start stage = do
  circle <- newCircle 40 40 30
+ button <- newButton "Click Me!"
  root <- newGroup
  scene <- newScene root 400 300
- _ <- root <.> getChildren >- addChild circle
+ button <.> setOnAction (\_ -> io $ print 100)
+ root <.> getChildren >- (do addChild circle
+                             addChild button)
+  --mapM addChild [circle, button]
  stage <.> (do setTitle "My JavaFX Application"
                setScene scene
                showStage)
