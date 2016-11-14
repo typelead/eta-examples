@@ -1,7 +1,7 @@
 name:                eta-javafx
 version:             0.1.0.0
-synopsis:            A JavaFX example in ETA
-description:         This is a project that demonstrates how to integrate with Java in ETA
+synopsis:            A JavaFX example in Eta
+description:         This is a project that demonstrates how to integrate with Java in Eta
 license:             Apache-2.0
 license-file:        LICENSE
 author:              Rahul Muttineni

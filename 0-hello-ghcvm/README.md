@@ -1,14 +1,14 @@
-# Hello ETA! Example
+# Hello Eta! Example
 
-In this tutorial, you'll compile a simple Haskell program with ETA and run it, illustrating the basic workflows.
+In this tutorial, you'll compile a simple Haskell program with Eta and run it, illustrating the basic workflows.
 
-In ETA, there are primarily two workflows:
+In Eta, there are primarily two workflows:
 
-1. Trying out simple programs without any dependencies. (CabalVM not needed)
+1. Trying out simple programs without any dependencies. (EPM not needed)
 
-2. Working on a multi-file, multi-dependency project. (CabalVM needed)
+2. Working on a multi-file, multi-dependency project. (EPM needed)
 
-## Without CabalVM
+## Without EPM
 
 1. Create a new file called `Main.hs` and put the following as its contents:
   ```haskell
@@ -32,11 +32,11 @@ In ETA, there are primarily two workflows:
 
   ```$ java -classpath Out.jar eta.main```
 
-  The `eta.main` class contains the entry point that initializes the ETA runtime system and runs the compiled program.
+  The `eta.main` class contains the entry point that initializes the Eta runtime system and runs the compiled program.
 
-## With CabalVM
+## With EPM
 
-With CabalVM, things become *much* smoother.
+With EPM, things become *much* smoother.
 
 1. Create a new directory called `eta-first` and enter it.
   ```
@@ -44,8 +44,8 @@ With CabalVM, things become *much* smoother.
   $ cd eta-first
   ```
 
-2. Initialize the project with CabalVM.
-  ```$ cabalvm init```
+2. Initialize the project with EPM.
+  ```$ epm init```
   This is an interactive command that will ask you questions and help you generate a cabal project file for your project. Select `Executable` (option 2) for project type and and `src` for the source directory. The project structure should look like this:
   ```
   eta-first/
@@ -79,13 +79,13 @@ With CabalVM, things become *much* smoother.
 
 5. To build & run, execute this command:
 
-  ```$ cabalvm run```
+  ```$ epm run```
 
 6. That build may have been slow. In order to make the build faster, configure the project to make a dynamic executable:
 
   ```
-  $ cabalvm configure --enable-executable-dynamic
-  $ cabalvm run
+  $ epm configure --enable-executable-dynamic
+  $ epm run
   ```
   Note that you don't have to run `configure` again from then on unless you want to revert it back to uberjar-mode with `--disable-executable-dynamic`.
 
@@ -95,4 +95,4 @@ If you had trouble with this tutorial, you can give us feedback by:
 
 - filing an [issue](https://github.com/typelead/eta-examples/issues/new)
 
-- discussing with us on [Gitter](https://gitter.im/rahulmutt/eta) 
+- discussing with us on [Gitter](https://gitter.im/typelead/eta) 
