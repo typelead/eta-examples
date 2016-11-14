@@ -2,6 +2,10 @@
 
 This repository contains sub-folders that have examples to demonstrate Eta in action. You can view the `README.md` in each sub-folder for instructions on how to run the program.
 
+# External Examples
+
+- [Eta 2048](https://github.com/rahulmutt/eta-2048)
+
 ## Contact Us
 
 If you had trouble with this tutorial, you can give us feedback by:
