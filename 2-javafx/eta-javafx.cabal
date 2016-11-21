@@ -17,7 +17,7 @@ source-repository head
 
 executable eta-javafx
   main-is:             Main.hs
-  other-modules:       CalculatorApp
+  other-modules:       SampleApp
                      , JavaFX
                      , JavaFX.Core
                      , JavaFX.Types

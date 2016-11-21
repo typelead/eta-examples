@@ -38,7 +38,7 @@ setTitle = setTitle' . mkJString
 foreign import java unsafe "setScene" setScene :: Scene -> Java Stage ()
 
 -- Button-related stuff
-foreign import java unsafe "@wrapper @abstract handle"
+foreign import java unsafe "@wrapper handle"
   action :: (Extends a Event)
          => (a -> Java (EventHandler a) ())
          -> EventHandler a

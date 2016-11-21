@@ -1,7 +1,7 @@
 module Main where
 
 import JavaFX
-import CalculatorApp
+import SampleApp
 
 main :: IO ()
-main = javafx "org.eta.CalculatorApp"
+main = javafx "org.eta.SampleApp"

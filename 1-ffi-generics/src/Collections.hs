@@ -1,4 +1,4 @@
-{-# LANGUAGE MagicHash, FlexibleContexts, MultiParamTypeClasses, TypeFamilies #-}
+{-# LANGUAGE MagicHash, FlexibleContexts, MultiParamTypeClasses, TypeFamilies, DataKinds #-}
 module Collections where
 
 data {-# CLASS "java.util.Collection" #-} Collection a = Collection (Object# (Collection a))
@@ -27,9 +27,9 @@ instance Class PrintStream where
   obj = PrintStream
   unobj (PrintStream o) = o
 
-type instance Super (ArrayList a) = List a
-type instance Super (List a) = Collection a
-type instance Super JInteger = Object
+type instance Inherits (ArrayList a) = '[List a]
+type instance Inherits (List a) = '[Collection a]
+type instance Inherits JInteger = '[Object]
 
 foreign import java unsafe "@new" newInteger :: Int -> JInteger
 foreign import java unsafe "intValue" intValue :: JInteger -> Int

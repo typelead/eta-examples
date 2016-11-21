@@ -1,4 +1,4 @@
-{-# LANGUAGE MagicHash, MultiParamTypeClasses, TypeFamilies #-}
+{-# LANGUAGE MagicHash, MultiParamTypeClasses, TypeFamilies, DataKinds #-}
 module JavaFX.Types where
 
 data {-# CLASS "javafx.application.Application" #-} Application
@@ -102,13 +102,12 @@ instance Class (EventHandler a) where
   obj = EventHandler
   unobj (EventHandler o) = o
 
-type instance Super Group = Parent
-type instance Super Parent = Node
-type instance Super Shape = Node
-type instance Super Circle = Shape
-type instance Super Node = Object
-type instance Super Event = Object
-type instance Super ActionEvent = Event
-type instance Super (EventHandler a) = Object
-type instance Super Button = Object
-
+type instance Inherits Group            = '[Parent]
+type instance Inherits Parent           = '[Node]
+type instance Inherits Shape            = '[Node]
+type instance Inherits Circle           = '[Shape]
+type instance Inherits Node             = '[Object]
+type instance Inherits Event            = '[Object]
+type instance Inherits ActionEvent      = '[Event]
+type instance Inherits (EventHandler a) = '[Object]
+type instance Inherits Button           = '[Object]
