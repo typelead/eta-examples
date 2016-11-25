@@ -10,6 +10,8 @@ To build the program, execute the following in this directory:
 
 ## Running
 
+Note: This example expects a `README.md` in the directory that the command is run, as that is the input file.
+
 - Let `SPARK_HOME` refer to the directory which contains your `Spark` installation.
 - Let `EXAMPLE_HOME` refer to the absolute path to this directory.
 
