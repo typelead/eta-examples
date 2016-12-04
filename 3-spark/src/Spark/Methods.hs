@@ -4,12 +4,12 @@ module Spark.Methods where
 import Prelude hiding (filter)
 import Spark.Types
 import Data.Int
-import GHC.Pack
+import Java
 
 type Spark a = Java JavaSparkContext a
 type RDD a b = Java (JavaRDD a) b
 
-foreign import java unsafe "@new" newSparkConf :: IO SparkConf
+foreign import java unsafe "@new" newSparkConf :: Java c SparkConf
 foreign import java unsafe "setAppName" setAppName' :: JString -> Java SparkConf SparkConf
 
 foreign import java unsafe "@new" newSparkContext :: SparkConf -> Java a JavaSparkContext
@@ -25,13 +25,11 @@ foreign import java safe "filter" filter' :: (Extends t Object) => Function t Bo
 foreign import java unsafe "@static @field java.lang.Boolean.TRUE" tRUE :: Boolean
 foreign import java unsafe "@static @field java.lang.Boolean.FALSE" fALSE :: Boolean
 
-foreign import java unsafe equals :: (Extends a Object) => a -> a -> Bool
-
 setAppName :: String -> Java SparkConf SparkConf
-setAppName = setAppName' . mkJString
+setAppName = setAppName' . toJString
 
 textFile :: String -> Spark (JavaRDD JString)
-textFile = textFile' . mkJString
+textFile = textFile' . toJString
 
 filter :: (Extends t Object, JavaConverter b t, JavaConverter c Boolean)
        => (b -> c) -> RDD t (JavaRDD t)
@@ -42,8 +40,8 @@ class JavaConverter a b where
   jconvertReverse :: b -> a
 
 instance JavaConverter String JString where
-  jconvert = mkJString
-  jconvertReverse = unpackCString
+  jconvert = toJString
+  jconvertReverse = fromJString
 
 instance JavaConverter Bool Boolean where
   jconvert True = tRUE

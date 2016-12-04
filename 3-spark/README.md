@@ -1,6 +1,6 @@
 # Apache Spark Example
 
-This example demonstrates how you can write an Apache Spark job in Eta.
+This example demonstrates how you can write an Apache Spark job in Eta. This example was tested with Spark 2.0.2.
 
 ## Building
 
@@ -16,10 +16,10 @@ Note: This example expects a `README.md` in the directory that the command is ru
 - Let `EXAMPLE_HOME` refer to the absolute path to this directory.
 
 ```
-$ cd $SPARK_HOME/bin/spark-submit
-                     --class eta.main
-                     --master local
-                     $EXAMPLE_HOME/dist/build/eta-spark/eta-spark.jar
+$ $SPARK_HOME/bin/spark-submit
+                  --class eta.main
+                  --master local
+                  $EXAMPLE_HOME/dist/build/eta-spark/eta-spark.jar
 ```
 
 ## Limitations
