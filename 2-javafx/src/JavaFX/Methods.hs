@@ -11,17 +11,11 @@ foreign import java unsafe "@new" newScene :: (Extends a Parent)
 foreign import java unsafe "@new"
   newCircle :: Double -> Double -> Double -> Java c Circle
 
-foreign import java unsafe "@new"
-  newTextField' :: JString -> Java c TextField
-
-newTextField :: String -> Java c TextField
-newTextField = newTextField' . mkJString
-
 foreign import java unsafe "@new" newGroup :: Java c Group
 
 -- launch eventually calls back into Haskell land so it should be marked 'safe'
 foreign import java safe "@static javafx.application.Application.launch"
-  launch :: JClass -> JStringArray -> IO ()
+  launch :: JClass a -> JStringArray -> IO ()
 
 foreign import java unsafe "getChildren" getChildren :: (Extends c Parent) => Java c ObservableList
 
@@ -32,7 +26,7 @@ foreign import java unsafe "show" showStage :: Java Stage ()
 foreign import java unsafe "setTitle" setTitle' :: JString -> Java Stage ()
 
 setTitle :: String -> Java Stage ()
-setTitle = setTitle' . mkJString
+setTitle = setTitle' . toJString
 
 foreign import java unsafe "setScene" setScene :: Scene -> Java Stage ()
 
@@ -45,7 +39,7 @@ foreign import java unsafe "@wrapper handle"
 foreign import java unsafe "@new"
   newButton' :: JString -> Java c Button
 
-newButton = newButton' . mkJString
+newButton = newButton' . toJString
 
 foreign import java unsafe "setOnAction"
   setOnAction' :: EventHandler ActionEvent -> Java Button ()

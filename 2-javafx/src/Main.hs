@@ -2,6 +2,7 @@ module Main where
 
 import JavaFX
 import SampleApp
+import Data.Proxy
 
 main :: IO ()
-main = javafx "org.eta.SampleApp"
+main = javafx (Proxy :: Proxy SampleApp)

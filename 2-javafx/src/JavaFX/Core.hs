@@ -2,8 +2,9 @@ module JavaFX.Core (javafx) where
 
 import System.Environment
 import JavaFX.Methods
+import Data.Proxy
 
-javafx :: String -> IO ()
-javafx clsName = do
+javafx :: Proxy a -> IO ()
+javafx p = do
   jargs <- getJavaArgs
-  launch (getClass clsName) jargs
+  launch (getClass p) jargs
