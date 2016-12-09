@@ -1,6 +1,8 @@
 {-# LANGUAGE MagicHash, FlexibleContexts, TypeFamilies, DataKinds #-}
 module Collections where
 
+import Java
+
 data {-# CLASS "java.util.Collection" #-} Collection a = Collection (Object# (Collection a))
   deriving Class
 data {-# CLASS "java.util.ArrayList" #-} ArrayList a = ArrayList (Object# (ArrayList a))

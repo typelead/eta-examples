@@ -1,6 +1,8 @@
 {-# LANGUAGE MagicHash, MultiParamTypeClasses, TypeFamilies, DataKinds #-}
 module JavaFX.Types where
 
+import Java
+
 data {-# CLASS "javafx.application.Application" #-} Application
   = Application (Object# Application)
   deriving Class

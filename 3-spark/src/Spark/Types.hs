@@ -1,6 +1,8 @@
 {-# LANGUAGE MagicHash #-}
 module Spark.Types where
 
+import Java
+
 data {-# CLASS "org.apache.spark.SparkConf" #-} SparkConf =
   SparkConf (Object# SparkConf)
   deriving Class

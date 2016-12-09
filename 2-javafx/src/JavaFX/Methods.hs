@@ -1,6 +1,7 @@
 {-# LANGUAGE FlexibleContexts #-}
 module JavaFX.Methods where
 
+import Java
 import JavaFX.Types
 
 foreign import java unsafe "@new" newScene :: (Extends a Parent)
