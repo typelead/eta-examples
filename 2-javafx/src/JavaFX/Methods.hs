@@ -24,10 +24,7 @@ foreign import java unsafe "@interface add" addChild :: Extends a Object => a ->
 
 foreign import java unsafe "show" showStage :: Java Stage ()
 
-foreign import java unsafe "setTitle" setTitle' :: JString -> Java Stage ()
-
-setTitle :: String -> Java Stage ()
-setTitle = setTitle' . toJString
+foreign import java unsafe "setTitle" setTitle :: String -> Java Stage ()
 
 foreign import java unsafe "setScene" setScene :: Scene -> Java Stage ()
 
@@ -37,10 +34,7 @@ foreign import java unsafe "@wrapper handle"
          => (a -> Java (EventHandler a) ())
          -> EventHandler a
 
-foreign import java unsafe "@new"
-  newButton' :: JString -> Java c Button
-
-newButton = newButton' . toJString
+foreign import java unsafe "@new" newButton :: String -> Java c Button
 
 foreign import java unsafe "setOnAction"
   setOnAction' :: EventHandler ActionEvent -> Java Button ()

@@ -8,7 +8,6 @@ import JavaFX.Methods
 data {-# CLASS "org.eta.SampleApp extends javafx.application.Application" #-}
   SampleApp = SampleApp (Object# SampleApp)
 
-
 start :: Stage -> Java SampleApp ()
 start stage = do
  circle <- newCircle 40 40 30

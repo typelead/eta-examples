@@ -1,4 +1,4 @@
-module JavaFX.Core (javafx) where
+module JavaFX.Core (javafx, Proxy(..)) where
 
 import System.Environment
 import JavaFX.Methods
