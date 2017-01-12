@@ -7,6 +7,7 @@ This example demonstrates how you can write an Apache Spark job in Eta. This exa
 To build the program, execute the following in this directory:
 
 `$ epm configure --disable-executable-dynamic`
+
 `$ epm build`
 
 ## Running
