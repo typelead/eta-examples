@@ -6,7 +6,7 @@ This example demonstrates how you can write an Apache Spark job in Eta. This exa
 
 To build the program, execute the following in this directory:
 
-`$ epm configure --disable-executable-dynamic`
+`$ epm configure --enable-uberjar-mode`
 `$ epm build`
 
 ## Running
@@ -19,14 +19,12 @@ Note: This example expects a `README.md` in the directory that the command is ru
 ```
 $ $SPARK_HOME/bin/spark-submit
                   --class eta.main
-                  --master local
+                  --master local[4]
                   $EXAMPLE_HOME/dist/build/eta-spark/eta-spark.jar
+                  +RTS --threaded -N4
 ```
-
-## Limitations
-You will get runtime exceptions if you allow Spark to use multiple threads, see
-[this issue](https://github.com/typelead/eta/issues/132). This is a limitation in
-the current RTS that will be lifted relatively soon.
+Note that you should set the `-N` flag and `local` flags to the same value for
+maximum benefit.
 
 ## Contact Us
 
