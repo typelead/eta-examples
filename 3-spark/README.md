@@ -6,8 +6,10 @@ This example demonstrates how you can write an Apache Spark job in Eta. This exa
 
 To build the program, execute the following in this directory:
 
-`$ epm configure --enable-uberjar-mode`
-`$ epm build`
+```shell
+$ epm configure --enable-uberjar-mode
+$ epm build
+```
 
 ## Running
 
@@ -16,7 +18,7 @@ Note: This example expects a `README.md` in the directory that the command is ru
 - Let `SPARK_HOME` refer to the directory which contains your `Spark` installation.
 - Let `EXAMPLE_HOME` refer to the absolute path to this directory.
 
-```
+```shell
 $ $SPARK_HOME/bin/spark-submit
                   --class eta.main
                   --master local[4]
