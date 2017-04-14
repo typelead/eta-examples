@@ -1,0 +1,39 @@
+machine:
+  services:
+    - docker
+  java:
+    version: oraclejdk8
+  environment:
+    PATH: ${HOME}/.local/bin:$PATH
+
+dependencies:
+  cache_directories:
+    - ~/.stack
+    - ~/.local
+    - ~/.etlas
+    - ~/.coursier
+    - ~/eta
+
+  pre:
+    - sudo apt-get update
+    - mkdir -p ~/.local/bin
+    - wget -qO- https://get.haskellstack.org/ | sh
+    - scripts/eta-install.sh
+
+  override:
+    - echo $PATH
+
+test:
+  override:
+    - etlas install 
+        pwd:
+          1-ffi-generics
+    - etlas install 
+        pwd:
+          1.5-ffi-generics
+    - etlas install 
+        pwd:
+          2-javafx
+    - etlas install 
+        pwd:
+          3-spark
