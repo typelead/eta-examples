@@ -15,9 +15,9 @@ dependencies:
     - ~/eta
 
   pre:
-    - sudo apt-get update
+    # - sudo apt-get update
     - mkdir -p ~/.local/bin
-    - wget -qO- https://get.haskellstack.org/ | sh
+    # - wget -qO- https://get.haskellstack.org/ | sh
     - scripts/eta-install.sh
 
   override:
@@ -26,10 +26,10 @@ dependencies:
 test:
   override:
     - etlas install 
-    #     pwd: 1-ffi-generics
-    # - etlas install 
-    #     pwd: 1.5-ffi-generics
-    # - etlas install 
-    #     pwd: 2-javafx
-    # - etlas install 
-    #     pwd: 3-spark
+        pwd: 1-ffi-generics
+    - etlas install 
+        pwd: 1.5-ffi-generics
+    - etlas install 
+        pwd: 2-javafx
+    - etlas install 
+        pwd: 3-spark
