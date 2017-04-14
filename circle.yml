@@ -25,11 +25,7 @@ dependencies:
 
 test:
   override:
-    - etlas install 
-        pwd: 1-ffi-generics
-    - etlas install 
-        pwd: 1.5-ffi-generics
-    - etlas install 
-        pwd: 2-javafx
-    - etlas install 
-        pwd: 3-spark
+    - etlas install 1-ffi-generics
+    - etlas install 1.5-ffi-generics
+    - etlas install 2-javafx
+    - etlas install 3-spark
