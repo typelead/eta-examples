@@ -4,7 +4,7 @@ module Spark.Methods where
 import Prelude hiding (filter)
 import Spark.Types
 import Data.Int
-import Java
+import Java hiding (JavaConverter)
 
 type Spark a = Java JavaSparkContext a
 type RDD a b = Java (JavaRDD a) b
