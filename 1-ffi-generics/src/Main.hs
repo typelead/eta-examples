@@ -1,6 +1,6 @@
 module Main where
 
-import Java
+import Java hiding (JInteger, add)
 import Control.Monad (forM_)
 import Collections
 
