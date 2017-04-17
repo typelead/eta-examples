@@ -1,7 +1,7 @@
 {-# LANGUAGE MagicHash, FlexibleContexts, TypeFamilies, DataKinds #-}
 module Collections where
 
-import Java
+import Java hiding (JInteger, Collection, List, add)
 
 data {-# CLASS "java.util.Collection" #-} Collection = Collection (Object# Collection)
   deriving Class
