@@ -1,5 +1,7 @@
 # Eta Examples
 
+[![Build Status](https://circleci.com/gh/typelead/eta-examples.svg?style=shield&circle-token=02e5fa5f6c02567267aa77290b16e43e8acad25d)](https://circleci.com/gh/typelead/eta-examples)
+
 This repository contains sub-folders that have examples to demonstrate Eta in action. You can view the `README.md` in each sub-folder for instructions on how to run the program.
 
 # External Examples
