@@ -4,7 +4,7 @@ This example demonstrates how you can import generic types from Java libraries w
 
 To run the program, execute the following in this example's directory:
 
-```$ epm run ```
+```$ etlas run ```
 
 ## Contact Us
 

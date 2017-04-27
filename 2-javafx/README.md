@@ -12,7 +12,7 @@ This is an example application that demonstrates Java integration in Eta. For no
 # Running
 ```
 $ cd eta-javafx
-$ epm run
+$ etlas run
 ```
 
 # Contact Us
