@@ -7,10 +7,7 @@ if [ ! -d "${HOME}/eta" ]; then
 else
     echo "Updating eta"
     cd ${HOME}/eta
-    for remote in `git branch -r | sed "s/origin\///g"`; do
-        git branch --track $remote origin/$remote;
-    done
-    git fetch --all
+    git fetch --all --tags -p
     git pull --all
 fi
 
