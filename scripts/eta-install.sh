@@ -25,6 +25,7 @@ elif [ -n "${ETA_PR}" ]; then
     git fetch origin "pull/${ETA_PR_NO}/head:${ETA_BRANCH}"
     git checkout "${ETA_BRANCH}"
 else
+    echo "Building without trigger"
     git checkout master
 fi
 
