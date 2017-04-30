@@ -4,14 +4,12 @@ if [ ! -d "${HOME}/eta" ]; then
     echo "Cloning eta"
     cd ${HOME}
     git clone --recursive https://github.com/typelead/eta
-else
-    echo "Updating eta"
-    cd ${HOME}/eta
-    git fetch --all --tags -p
-    git pull --all
 fi
 
 cd ${HOME}/eta
+git fetch --all --tags -p
+git pull --all
+
 if [ -n "${ETA_BRANCH}" ]; then
     echo "Building eta branch ${ETA_BRANCH}"
     git checkout "${ETA_BRANCH}"
