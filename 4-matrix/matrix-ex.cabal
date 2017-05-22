@@ -1,4 +1,4 @@
-name:                matrix
+name:                matrix-ex
 version:             0.1.0.0
 license:             MIT
 license-file:        LICENSE
@@ -7,7 +7,7 @@ maintainer:          rahulmutt@gmail.com
 build-type:          Simple
 cabal-version:       >=1.10
 
-executable matrix
+executable matrix-ex
   main-is:             Main.hs
   build-depends:       base >=4.8 && <4.9
                      , singletons <= 2.0.1
