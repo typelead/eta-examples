@@ -10,9 +10,9 @@ This is an example application that demonstrates Java integration in Eta. For no
 - [Eta](https://github.com/typelead/eta) (On `master` branch)
 
 # Running
-```
-$ cd eta-javafx
-$ etlas run
+
+```shell
+etlas run
 ```
 
 # Contact Us

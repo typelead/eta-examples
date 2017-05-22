@@ -7,9 +7,9 @@ This example demonstrates how you can write an Apache Spark job in Eta. This exa
 To build the program, execute the following in this directory:
 
 ```shell
-$ etlas clean
-$ etlas configure --enable-uberjar-mode
-$ etlas build
+etlas clean
+etlas configure --enable-uberjar-mode
+etlas build
 ```
 
 ## Running
@@ -20,11 +20,11 @@ Note: This example expects a `README.md` in the directory that the command is ru
 - Let `EXAMPLE_HOME` refer to the absolute path to this directory.
 
 ```shell
-$ $SPARK_HOME/bin/spark-submit
-                  --class eta.main
-                  --master local[4]
-                  $EXAMPLE_HOME/dist/build/eta-spark/eta-spark.jar
-                  +RTS --threaded -N4
+$SPARK_HOME/bin/spark-submit
+                --class eta.main
+                --master local[4]
+                $EXAMPLE_HOME/dist/build/eta-spark/eta-spark.jar
+                +RTS --threaded -N4
 ```
 Note that you should set the `-N` flag and `local` flags to the same value for
 maximum benefit.

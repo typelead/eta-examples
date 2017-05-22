@@ -1,10 +1,11 @@
-# Java FFI w/ Generics Example
+# Dependent Types in Eta
 
-This example demonstrates how you can import generic types from Java libraries.
+This example demonstrates how you can work with dependent types in Eta via the `singletons` library. It shows an example of type-safe matrix multiplication.
 
 To run the program, execute the following in this example's directory:
 
 ```shell
+etlas install --dependencies-only
 etlas run
 ```
 
