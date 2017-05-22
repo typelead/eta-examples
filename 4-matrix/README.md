@@ -5,8 +5,12 @@ This example demonstrates how you can work with dependent types in Eta via the `
 To run the program, execute the following in this example's directory:
 
 ```shell
-etlas install --dependencies-only
-etlas run
+> etlas install --dependencies-only
+> etlas run -- 1 2 3 4
+Matrices of incompatible size.
+> etlas run -- 1 2 2 4
+(  8 16 24 32 )
+
 ```
 
 ## Contact Us
