@@ -7,6 +7,7 @@ import JavaFX.Methods
 
 data {-# CLASS "org.eta.SampleApp extends javafx.application.Application" #-}
   SampleApp = SampleApp (Object# SampleApp)
+  deriving Class
 
 start :: Stage -> Java SampleApp ()
 start stage = do
