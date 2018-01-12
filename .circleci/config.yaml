@@ -1,0 +1,12 @@
+version: 2.0
+jobs:
+  docker:
+    - image: typelead/eta:latest
+  build:
+    steps:
+    - checkout
+    - run: etlas install 1-ffi-generics
+    - run: etlas install 1.5-ffi-generics
+    - run: etlas install 2-javafx
+    - run: etlas install 3-spark
+    - run: etlas install 4-matrix
