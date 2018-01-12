@@ -6,11 +6,6 @@ jobs:
     steps:
     - checkout
     - run: etlas install 1-ffi-generics
-  test:
-    docker:
-      - image: typelead/eta:latest
-    steps:
-    - checkout
     - run: etlas install 1-ffi-generics
     - run: etlas install 1.5-ffi-generics
     - run: etlas install 2-javafx
@@ -22,6 +17,3 @@ workflows:
   full_cycle:
     jobs:
       - build
-      - test:
-          requires:
-            - build
