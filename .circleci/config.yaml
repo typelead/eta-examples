@@ -10,3 +10,8 @@ jobs:
     - run: etlas install 2-javafx
     - run: etlas install 3-spark
     - run: etlas install 4-matrix
+workflows:
+  version: 2
+  full_cycle:
+    jobs:
+      - build
