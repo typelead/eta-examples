@@ -5,11 +5,7 @@ jobs:
       - image: typelead/eta:latest
     steps:
     - checkout
-    - run: etlas install 1-ffi-generics
-    - run: etlas install 1.5-ffi-generics
-    - run: etlas install 2-javafx
-    - run: etlas install 3-spark
-    - run: etlas install 4-matrix
+    - run: etlas build all
 
 workflows:
   version: 2
